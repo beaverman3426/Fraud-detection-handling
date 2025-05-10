@@ -91,7 +91,7 @@ Measures the model's ability to distinguish between classes across all threshold
 - **Use Case**: Provides an overall performance metric, robust to imbalance.
 - **Deficiency**: AUC-ROC can be misleading in fraud detection because it remains high even when the model fails to correctly identify rare fraudulent transactions in an imbalanced dataset.
 
-Given the imbalanced nature of PaySim, **precision**, **recall**, and **F1-score** are prioritized over accuracy, as accuracy can be misleading (e.g., predicting all transactions as non-fraudulent yields 99.87% accuracy but misses all frauds).
+Given the imbalanced nature of the PaySim dataset and the limitations of metrics like **F1-score** and **AUC**, it may be more effective to define a custom evaluation metric that directly prioritizes the percentage of fraud detected, aligning with the domain-specific cost of missed fraud.
 
 ## FastAPI Endpoint with Celery and RabbitMQ
 The second component is a **FastAPI** endpoint that serves predictions using the trained Random Forest model, integrated with **Celery** and **RabbitMQ** for asynchronous processing.
