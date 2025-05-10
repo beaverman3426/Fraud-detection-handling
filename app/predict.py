@@ -2,7 +2,7 @@ import joblib
 import pandas as pd
 
 
-bundle = joblib.load("model/fraud_rf_bundle.pkl")
+bundle = joblib.load("E:\html-boilerplate\Fraud-detection-handling\model/fraud_rf_bundle.pkl")
 model = bundle['model']
 encoder = bundle['label_encoder']
 
