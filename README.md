@@ -84,12 +84,12 @@ Measures the proportion of actual fraudulent transactions correctly identified (
 ### F1-Score
 Harmonic mean of precision and recall, balancing both metrics for a comprehensive evaluation.
 - **Use Case**: Useful when both false positives and false negatives are important, providing a single metric for model performance.
-- **Deficiency**: May not highlight trade-offs between precision and recall in highly imbalanced datasets.
+- **Deficiency**: F1-score is heavily influenced by True Positives, As a result, models may look good on paper, but still miss rare fraud cases.
 
 ### ROC-AUC
 Measures the model's ability to distinguish between classes across all thresholds.
 - **Use Case**: Provides an overall performance metric, robust to imbalance.
-- **Deficiency**: May be overly optimistic in highly imbalanced datasets like PaySim, where high AUC can mask poor minority class performance.
+- **Deficiency**: AUC-ROC can be misleading in fraud detection because it remains high even when the model fails to correctly identify rare fraudulent transactions in an imbalanced dataset.
 
 Given the imbalanced nature of PaySim, **precision**, **recall**, and **F1-score** are prioritized over accuracy, as accuracy can be misleading (e.g., predicting all transactions as non-fraudulent yields 99.87% accuracy but misses all frauds).
 
