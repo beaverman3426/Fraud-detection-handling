@@ -1,3 +1,4 @@
 from tasks import celery
 
-celery.worker_main()
+if __name__ == "__main__":
+    celery.start()
